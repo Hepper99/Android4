@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+  <TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Auto Update?"
+  />
+  <CheckBox android:id="@+id/checkbox_auto_update"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+  />
+  <TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Update Frequency"
+  />
+  <Spinner android:id="@+id/spinner_update_freq"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:drawSelectorOnTop="true"
+  />
+  <TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Mininum Quake Magnitude"
+  />
+  <Spinner android:id="@+id/spinner_quake_mag"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:drawSelectorOnTop="true"
+  />
+  <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <Button android:id="@+id/okButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@android:string/ok"
+    />
+    <Button android:id="@+id/cancelButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@android:string/cancel"
+    />
+  </LinearLayout>
+</LinearLayout>

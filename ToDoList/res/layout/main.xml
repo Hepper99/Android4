@@ -5,14 +5,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
-    <EditText
-        android:id="@+id/et"
+    <fragment android:name="com.example.todolist.NewItemFragment"
+        android:id="@+id/NewItemFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 		android:hint="@string/addItemHint"
         android:text="@string/addItemContentDescription" />
-    <ListView
-        android:id="@+id/lv"
+    <fragment android:name="com.example.todolist.ToDoListFragment"
+        android:id="@+id/ToDoListFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
     />
