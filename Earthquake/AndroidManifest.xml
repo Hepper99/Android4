@@ -38,6 +38,12 @@
                 android:resource="@xml/searchable"
             />
         </activity>
+        <service android:enabled="true" android:name=".EarthquakeUpdateService"/>
+        <receiver android:name=".EarthquakeAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.example.earthquake.ACTION_ALARM"/>
+            </intent-filter>  
+        </receiver>
     </application>
  
 </manifest>

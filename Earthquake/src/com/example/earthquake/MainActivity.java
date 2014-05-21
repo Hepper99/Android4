@@ -2,13 +2,16 @@ package com.example.earthquake;
 
 
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.app.SearchManager;
 import android.app.SearchableInfo;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -53,5 +56,32 @@ public class MainActivity extends FragmentActivity {
 	    }
 	    return false;
 	}
+	
+	private void updateFromPreferences() {
+	    Context context = getApplicationContext();
+	    SharedPreferences prefs = 
+	      PreferenceManager.getDefaultSharedPreferences(context);
 
+	    minimumMagnitude = prefs.getInt(PreferenceActivity.PREF_MIN_MAG_INDEX, 3);
+	    updateFreq = prefs.getInt(PreferenceActivity.PREF_UPDATE_FREQ_INDEX, 60);
+
+	    autoUpdateChecked = prefs.getBoolean(PreferenceActivity.PREF_AUTO_UPDATE, false);
+	    String[] minMagValues = getResources().getStringArray(R.array.magnitude);
+	    String[] freqValues = getResources().getStringArray(R.array.update_freq_values);
+	    minimumMagnitude = Integer.valueOf(minMagValues[minimumMagnitude]);
+	    updateFreq = Integer.valueOf(freqValues[updateFreq]);
+	    
+	}
+	
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+	    super.onActivityResult(requestCode, resultCode, data);
+
+	    if (requestCode == SHOW_PREFERENCES)
+	      updateFromPreferences();
+	      
+//	      FragmentManager fm = getSupportFragmentManager();
+//	      EarthquakeListFragment earthquakeList = 
+//	          (EarthquakeListFragment)fm.findFragmentById(R.id.listfragment);
+//	      earthquakeList.refreshEarthquakes();
+	}
 }

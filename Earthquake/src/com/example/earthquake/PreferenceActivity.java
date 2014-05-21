@@ -21,6 +21,7 @@ public class PreferenceActivity extends Activity {
 	  public static final String PREF_AUTO_UPDATE = "PREF_AUTO_UPDATE";
 	  public static final String PREF_MIN_MAG_INDEX = "PREF_MIN_MAG_INDEX";
 	  public static final String PREF_UPDATE_FREQ_INDEX = "PREF_UPDATE_FREQ_INDEX";
+	  public static final String PREF_UPDATE_FREQ = "PREF_UPDATE_FREQ";
 	  
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
