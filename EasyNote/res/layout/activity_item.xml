@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NoteActivity" >
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content">
+    	<TextView 
+    		android:layout_width="0dp"
+        	android:layout_height="50dp"
+        	android:layout_weight="1"
+        	android:gravity="center"
+        	android:text="@string/cancel"
+    	/>
+    	<TextView 
+    	    android:id="@+id/ok"
+    		android:layout_width="0dp"
+        	android:layout_height="50dp"
+        	android:layout_weight="1"
+        	android:gravity="center"
+        	android:text="@string/ok"
+    	/>
+    </LinearLayout>
+    
+    <EditText
+        android:id="@+id/itemone"
+        android:hint="@string/hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/edit_text"/>
+    
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <RadioButton
+            android:id="@+id/yes"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/yes" />
+        <RadioButton
+            android:id="@+id/no"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no" />
+    </RadioGroup>
+
+</LinearLayout>
